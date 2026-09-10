@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!-- SITE ÉOLO
+     HTML = estrutura da página
+     CSS = aparência (arquivo style.css)
+     JavaScript = ações e botões (arquivo script.js) -->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Éolo — Cuidando da sua respiração</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ==================================================
+       GUIA RÁPIDO
+       Título      = textos grandes das páginas
+       Imagem      = figuras e ilustrações
+       Botão       = ações que o usuário pode clicar
+       Cartão      = cada bloco branco de informação
+       Menu        = navegação entre as páginas
+       ================================================== -->
+
+<!-- ============================================================
+     PÁGINA DE APRESENTAÇÃO
+     Primeira página que aparece quando o site é aberto.
+     ============================================================ -->
+<section class="pagina-apresentacao" id="pagina-apresentacao">
+
+  <!-- CABEÇALHO DA PÁGINA -->
+  <header class="cabecalho-apresentacao">
+    <div class="logo-apresentacao">Éolo</div>
+    <button class="botao-login-topo" onclick="mostrarLogin()">Fazer login</button>
+  </header>
+
+  <!-- PARTE PRINCIPAL -->
+  <div class="apresentacao-principal">
+    <div class="texto-principal-apresentacao">
+      <span class="etiqueta-projeto">CUIDADO RESPIRATÓRIO CONECTADO</span>
+      <h1>Mais controle para respirar melhor.</h1>
+      <p class="texto-grande-apresentacao">
+        O <strong>Éolo</strong> 
+       é uma solução inteligente para o acompanhamento da asma. Ele conecta a bombinha a uma plataforma digital simples e acessível, permitindo registrar o uso, acompanhar o histórico e visualizar informações importantes de forma prática e organizada.
+        
+      </p>
+    </div>
+
+   <!-- IMAGEM / PROTÓTIPO -->
+   <div class="imagem-principal-apresentacao">
+    <div class="bolha-decorativa bolha-1"></div>
+    <div class="bolha-decorativa bolha-2"></div>
+    <div class="cartao-prototipo">
+      <span class="etiqueta-prototipo">PROTÓTIPO ÉOLO</span>
+      <img class="desenho-bombinha" src="image-Photoroom.png" alt="Protótipo de bombinha inteligente do Éolo">
+      <div class="legenda-prototipo">
+        <strong>Dispositivo conectado</strong>
+        <span>Acoplado à bombinha para auxiliar no monitoramento do uso.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- COMO FUNCIONA -->
+  <section class="secao-apresentacao" id="como-funciona">
+    <div class="titulo-secao-apresentacao">
+      <span class="etiqueta-projeto">COMO FUNCIONA</span>
+      <h2>Uma solução feita para acompanhar o cuidado</h2>
+      <p>O Éolo conecta o uso da bombinha ao acompanhamento digital de uma forma simples.</p>
+    </div>
+
+    <div class="caixa-como-funciona">
+      <h3>Uso da bombinha, registro e acompanhamento</h3>
+      <p>O Éolo reúne o uso da bombinha, o registro das informações do dia a dia e o acompanhamento do histórico em um só lugar. O protótipo é pensado para ficar junto ao inalador e ajudar a registrar os momentos de uso, enquanto a plataforma organiza sintomas, medicações, observações e outros dados importantes. Assim, o paciente consegue acompanhar sua rotina e visualizar seu histórico de forma simples e organizada.</p>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape-apresentacao">
+    <strong>Éolo</strong>
+    <span>Solução digital para acompanhamento da asma.</span>
+  </footer>
+</section>
+
+<!-- ============================================================
+     PÁGINA DE LOGIN
+     Ela só aparece quando a pessoa clicar em "Fazer login".
+     ============================================================ -->
+<section class="tela" id="tela-login">
+  <div class="area-login">
+    <div class="imagem-login">
+      <div class="marca-login">
+        <b>Éolo</b>
+        <span>Cuidado respiratório conectado</span>
+      </div>
+      <div class="imagem-bombinha" aria-hidden="true">
+        <img src="imagens/logo.png" alt="Bombinha do Éolo">
+      </div>
+    </div>
+
+    <div class="formulario-login">
+      <div class="caixa-login">
+        <h1>Bem-vindo de volta!</h1>
+        <p class="subtitulo-login">Faça login para continuar cuidando da sua saúde.</p>
+
+        <div class="escolha-tipo" role="tablist" aria-label="Tipo de acesso">
+          <button type="button" class="active" data-role="paciente" role="tab" aria-selected="true">Sou paciente</button>
+          <button type="button" data-role="cuidador" role="tab" aria-selected="false">Sou cuidador</button>
+        </div>
+
+        <div class="campo">
+          <label for="email-login">Email</label>
+          <input id="email-login" type="email" placeholder="seu.email@exemplo.com">
+        </div>
+        <div class="campo">
+          <label for="senha-login">Senha</label>
+          <div class="campo-senha">
+            <input id="senha-login" type="password" placeholder="••••••••••">
+            <button type="button" class="botao-senha" onclick="mostrarSenha()" aria-label="Mostrar senha">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="linha-login">
+          <label class="linha-checkbox"><input type="checkbox" checked> Lembrar de mim</label>
+          <a href="javascript:void(0)" onclick="mostrarAviso('Link de recuperação enviado (simulação)')">Esqueci minha senha</a>
+        </div>
+
+        <button class="botao-principal" onclick="entrarNoSite()">Entrar</button>
+        <div class="divisao"><span>ou</span></div>
+        <button class="botao-contorno" onclick="mostrarAviso('Cadastro em construção')">Criar uma conta</button>
+
+        <p class="termos-login">Ao continuar, você concorda com nossos <a href="javascript:void(0)">Termos de Uso</a> e <a href="javascript:void(0)">Política de Privacidade</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ APP ============================================================ -->
+<div class="site"
+  id="site" hidden>
+
+  <div class="fundo-menu" id="fundo-menu" onclick="fecharMenu()"></div>
+
+  <aside class="menu-lateral" id="menu-lateral">
+    <div class="logo-titulo">
+      <b>Éolo</b>
+    </div>
+
+    <nav class="menu-links">
+      <button class="link-menu active" data-target="home" onclick="mostrarPagina('home')">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+        Início
+      </button>
+      <button class="link-menu" data-target="crise" onclick="mostrarPagina('crise')">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+        Crise de Asma
+      </button>
+      <button class="link-menu" data-target="dicas" onclick="mostrarPagina('dicas')">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg>
+        Dicas de Controle
+      </button>
+      <button class="link-menu" data-target="medicamentos" onclick="mostrarPagina('medicamentos')">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="8" rx="4" transform="rotate(-45 12 12)"/><path d="M8.5 15.5l7-7" transform="rotate(-45 12 12)"/></svg>
+        Medicamentos
+      </button>
+      <button class="link-menu esconder-cuidador" data-target="registro" onclick="mostrarPagina('registro')">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+        Registro Diário
+      </button>
+      <button class="link-menu" data-target="relatorios" onclick="mostrarPagina('relatorios')">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+        Relatórios
+      </button>
+      <button class="link-menu" data-target="faq" onclick="mostrarPagina('faq')">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 .5c0 1.7-2.5 1.8-2.5 3.5"/><path d="M12 17h.01"/></svg>
+        Perguntas Frequentes
+      </button>
+      <button class="link-menu" data-target="info" onclick="mostrarPagina('info')">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+        Informações Adicionais
+      </button>
+    </nav>
+
+    <button class="sidebar-emergency" onclick="mostrarPagina('crise'); fecharMenu();">
+      <b>EMERGÊNCIA</b>
+      <span>Em caso de crise grave, procure ajuda imediata ou ligue 192</span>
+    </button>
+  </aside>
+
+  <div class="area-principal">
+    <header class="cabecalho">
+      <button class="botao-menu" id="botao-menu" onclick="abrirMenu()" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <div class="titulos-cabecalho">
+        <h1 id="titulo-cabecalho">Olá, usuário!</h1>
+        <p id="subtitulo-cabecalho">Cuide da sua respiração todos os dias.</p>
+      </div>
+      <div class="acoes-cabecalho">
+        <button class="botao-icone" onclick="mostrarAviso('Você não tem notificações novas')" aria-label="Notificações">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        </button>
+        <button class="botao-perfil" onclick="mostrarPagina('info')" aria-label="Minha conta">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="conteudo-principal">
+
+      <!-- ---------------- INÍCIO / DASHBOARD ---------------- -->
+      <section class="pagina active" id="pagina-inicio">
+        <!-- CARD PRINCIPAL: CONTROLE DA ASMA -->
+        <div class="inicio-centralizado">
+          <div class="cartao cartao-controle">
+            <div class="texto-controle">
+              <span class="titulo-cartao">Seu controle da asma hoje</span>
+
+              <!-- GRÁFICO CIRCULAR -->
+              <div class="medidor">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                  <circle class="medidor-fundo" cx="75" cy="75" r="62"></circle>
+                  <circle class="medidor-progresso" id="circulo-medidor" cx="75" cy="75" r="62" stroke-dasharray="389.56" stroke-dashoffset="194.78"></circle>
+                </svg>
+                <div class="numero-medidor"><b id="numero-medidor">100</b><span>/200</span></div>
+              </div>
+
+              <p class="mensagem-controle">Continue assim!<br>Você está no caminho certo.</p>
+            </div>
+
+            <!-- IMAGEM DA BOMBinha -->
+            <div class="imagem-controle" aria-hidden="true">
+              <svg viewBox="0 0 160 220" width="130">
+                <rect x="56" y="6" width="48" height="22" rx="5" fill="#4C7FE0"/>
+                <rect x="44" y="28" width="72" height="120" rx="14" fill="#2F6FED"/>
+                <rect x="52" y="42" width="56" height="48" rx="8" fill="#5A8CF0"/>
+                <rect x="44" y="148" width="72" height="24" fill="#1D3FA0"/>
+                <path d="M44 172 L116 172 L104 200 L56 200 Z" fill="#16214B"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- CRISE DE ASMA ---------------- -->
+      <section class="pagina"
+  id="pagina-crise">
+        <div class="titulo-pagina">
+          <h2>Crise de Asma</h2>
+          <p>Siga as orientações com calma</p>
+        </div>
+        <div class="lista-passos">
+          <div class="item-passo open">
+            <span class="numero-passo">1</span>
+            <div><b>Sente-se e mantenha a calma</b><p>Fique em posição ereta, apoiado, e tente respirar devagar pelo nariz.</p></div>
+          </div>
+          <div class="item-passo open">
+            <span class="numero-passo">2</span>
+            <div><b>Use a imagem-bombinha de alívio</b><p>4 puffs, um de cada vez, com 30 segundos de intervalo entre eles.</p></div>
+          </div>
+          <div class="item-passo open">
+            <span class="numero-passo">3</span>
+            <div><b>Aguarde e reavalie</b><p>Espere 10 minutos. Se não melhorar, repita e procure ajuda médica.</p></div>
+          </div>
+        </div>
+        <button class="botao-emergencia" onclick="abrirEmergencia()">EMERGÊNCIA</button>
+      </section>
+
+      <!-- ---------------- DICAS DE CONTROLE ---------------- -->
+      <section class="pagina"
+  id="pagina-dicas">
+        <div class="titulo-pagina">
+          <h2>Dicas de Controle</h2>
+          <p>Aprenda a cuidar melhor da sua asma</p>
+        </div>
+        <div class="painel-dividido">
+          <div class="lista-dicas" id="lista-dicas">
+            <button class="item-dica active" data-topic="entenda">Entenda sua asma</button>
+            <button class="item-dica" data-topic="inalador">Como usar o inalador</button>
+            <button class="item-dica" data-topic="gatilhos">Evite Gatilhos</button>
+            <button class="item-dica" data-topic="atividade">Atividade Física</button>
+            <button class="item-dica" data-topic="faq">Perguntas Frequentes</button>
+          </div>
+          <div class="detalhe-dica" id="detalhe-dicas">
+            <h3>Entenda sua asma</h3>
+            <p>A asma é uma doença inflamatória crônica das vias aéreas que causa estreitamento dos brônquios, dificultando a passagem do ar.</p>
+            <p class="titulo-secao">Principais sintomas</p>
+            <div class="etiquetas-sintomas">
+              <span class="etiqueta">Tosse</span>
+              <span class="etiqueta">Falta de ar</span>
+              <span class="etiqueta">Chiado</span>
+              <span class="etiqueta">Aperto no peito</span>
+            </div>
+            <div class="aviso-informacao">Cada pessoa pode ter sintomas diferentes e em intensidades variadas. Por isso, é importante conhecer o seu corpo e os fatores que podem desencadear crises.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- MEDICAMENTOS ---------------- -->
+      <section class="pagina"
+  id="pagina-medicamentos">
+        <div class="linha-titulo">
+          <div class="titulo-pagina">
+            <h2>Meus Medicamentos</h2>
+            <p>Acompanhe seus remédios</p>
+          </div>
+          <button class="botao-principal botao-linha" onclick="abrirFormularioMedicamento()">+ Adicionar medicamento</button>
+        </div>
+
+        <div class="abas">
+          <button class="botao-aba active" data-tab="diarios" onclick="trocarAbaRemedios(this)">Diários</button>
+          <button class="botao-aba" data-tab="alivio" onclick="trocarAbaRemedios(this)">Alívio</button>
+        </div>
+
+        <!-- MEDICAMENTOS ADICIONADOS PELO USUÁRIO -->
+        <div class="lista-remedios" id="lista-novos-medicamentos"></div>
+        <p id="sem-medicamentos" class="sem-medicamentos">Nenhum medicamento cadastrado.</p>
+
+        <button class="botao-contorno botao-bloco" onclick="mostrarTodosMedicamentos()">Ver todos os medicamentos</button>
+      </section>
+
+      <!-- ---------------- REGISTRO DIÁRIO ---------------- -->
+      <section class="pagina"
+  id="pagina-registro">
+        <div class="linha-titulo">
+          <div class="titulo-pagina">
+            <h2>Registro Diário</h2>
+            <p>Acompanhe sua asma</p>
+          </div>
+          <span class="data" id="data-registro"></span>
+        </div>
+
+        <div class="grade-registro">
+          <div class="coluna-registro">
+            <p class="titulo-secao">Como está a sua respiração hoje?</p>
+            <div class="linha-humor-registro">
+              <button class="botao-humor" data-mood="boa" onclick="escolherHumor(this)"><span>BOA</span></button>
+              <button class="botao-humor" data-mood="regular" onclick="escolherHumor(this)"><span>REGULAR</span></button>
+              <button class="botao-humor" data-mood="ruim" onclick="escolherHumor(this)"><span>RUIM</span></button>
+            </div>
+
+            <p class="titulo-secao">Sintomas</p>
+            <div class="grupo-opcoes">
+              <span class="opcao" onclick="marcarOpcao(this)">Tosse</span>
+              <span class="opcao" onclick="marcarOpcao(this)">Falta de ar</span>
+              <span class="opcao" onclick="marcarOpcao(this)">Chiado</span>
+              <span class="opcao" onclick="marcarOpcao(this)">Aperto no peito</span>
+              <span class="opcao" onclick="marcarOpcao(this)">Cansaço</span>
+              <span class="opcao" onclick="marcarOpcao(this)">Outros</span>
+            </div>
+
+            <p class="titulo-secao">Uso de medicação de alívio</p>
+            <p class="pergunta-pequena">Usou hoje?</p>
+            <div class="grupo-opcoes">
+              <span class="opcao" onclick="marcarUmaOpcao(this)">Sim</span>
+              <span class="opcao" onclick="marcarUmaOpcao(this)">Não</span>
+            </div>
+            <p class="pergunta-pequena" style="margin-top:14px;">Quantas vezes?</p>
+            <div class="contador">
+              <button onclick="mudarContador(-1)" aria-label="Diminuir">−</button>
+              <span id="valor-contador">1</span>
+              <button onclick="mudarContador(1)" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="coluna-registro">
+            <p class="titulo-secao">Gatilhos identificados</p>
+            <div class="lista-verificacao" id="lista-gatilhos">
+              <label class="linha-checkbox"><input type="checkbox"> Poeira</label>
+              <label class="linha-checkbox"><input type="checkbox"> Fumaça</label>
+              <label class="linha-checkbox"><input type="checkbox"> Poluição</label>
+              <label class="linha-checkbox"><input type="checkbox"> Pólen</label>
+              <label class="linha-checkbox"><input type="checkbox"> Cheiro forte</label>
+              <label class="linha-checkbox"><input type="checkbox"> Exercício</label>
+              <label class="linha-checkbox"><input type="checkbox"> Mudança de clima</label>
+              <label class="linha-checkbox"><input type="checkbox"> Outros</label>
+            </div>
+
+            <p class="titulo-secao">Observações (opcional)</p>
+            <textarea class="textarea" id="observacoes-registro" rows="5" placeholder="Como você se sentiu hoje?"></textarea>
+          </div>
+        </div>
+
+        <button class="botao-principal botao-bloco" onclick="salvarRegistro()">Salvar registro</button>
+      </section>
+
+      <!-- ---------------- RELATÓRIOS ---------------- -->
+      <section class="pagina" id="pagina-relatorios">
+        <div class="titulo-pagina">
+          <h2>Relatórios</h2>
+          <p>Veja os seus registros, do mais recente para o mais antigo.</p>
+        </div>
+
+        <div id="lista-relatorios" class="lista-relatorios"></div>
+
+        <p id="sem-relatorios" class="sem-relatorios">Nenhum registro diário foi salvo ainda.</p>
+      </section>
+
+      <!-- ---------------- FAQ ---------------- -->
+      <section class="pagina"
+  id="pagina-faq">
+        <div class="titulo-pagina">
+          <h2>Perguntas Frequentes</h2>
+          <p>Tire suas dúvidas sobre a asma e o app</p>
+        </div>
+        <div class="lista-perguntas">
+          <div class="item-pergunta">
+            <div class="pergunta">Asma tem cura?</div>
+            <p class="resposta">Não tem cura, mas tem controle. Com o tratamento correto, é possível viver sem crises.</p>
+          </div>
+          <div class="item-pergunta">
+            <div class="pergunta">Com que frequência devo registrar meus sintomas?</div>
+            <p class="resposta">O ideal é registrar todos os dias, mesmo nos dias sem sintomas — isso ajuda a identificar padrões.</p>
+          </div>
+          <div class="item-pergunta">
+            <div class="pergunta">O cuidador pode ver todos os meus dados?</div>
+            <p class="resposta">Sim, o cuidador vinculado à sua conta acompanha seu histórico e relatórios, mas não faz o registro diário por você.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- INFORMAÇÕES ADICIONAIS ---------------- -->
+      <section class="pagina"
+  id="pagina-info">
+        <div class="titulo-pagina">
+          <h2>Informações Adicionais</h2>
+          <p>Sobre a asma e o Éolo</p>
+        </div>
+        <div class="bloco-informacao">
+          <b>Sobre a asma</b>
+          A asma é uma doença crônica que afeta os pulmões e as vias aéreas. Com o tratamento adequado e cuidados diários, é possível ter uma vida ativa e saudável.
+        </div>
+        <div class="bloco-informacao">
+          <b>Sobre o projeto</b>
+          O Éolo é um projeto integrador que conecta uma imagem-bombinha inteligente ao aplicativo, permitindo que pacientes e cuidadores acompanhem o uso da medicação em tempo real.
+        </div>
+        <div class="bloco-informacao">
+          <b>Dúvidas?</b>
+          Entre em contato com a equipe pelo suporte do aplicativo.
+        </div>
+        <button class="botao-contorno botao-bloco" onclick="sairDoSite()">Sair da conta</button>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ================= FORMULÁRIO DE MEDICAMENTO ================= -->
+<div class="fundo-modal" id="modal-medicamento">
+  <div class="caixa-modal formulario-medicamento">
+    <button class="botao-fechar" onclick="fecharFormularioMedicamento()">×</button>
+    <h3>Adicionar medicamento</h3>
+    <p>Preencha os dados do medicamento.</p>
+
+    <div class="campo-formulario">
+      <label for="nome-medicamento">Nome do medicamento</label>
+      <input id="nome-medicamento" type="text" placeholder="Ex.: Aerolin">
+    </div>
+
+    <div class="campo-formulario">
+      <label for="tipo-medicamento">Tipo</label>
+      <select id="tipo-medicamento">
+        <option value="controle">Controle diário</option>
+        <option value="resgate">Resgate / alívio</option>
+      </select>
+    </div>
+
+    <div class="duas-colunas-formulario">
+      <div class="campo-formulario">
+        <label for="dose-medicamento">Dose</label>
+        <input id="dose-medicamento" type="text" placeholder="Ex.: 100 mcg">
+      </div>
+      <div class="campo-formulario">
+        <label for="horario-medicamento">Horário</label>
+        <input id="horario-medicamento" type="time">
+      </div>
+    </div>
+
+    <div class="campo-formulario" id="campo-frequencia">
+      <label for="frequencia-medicamento">Frequência</label>
+      <input id="frequencia-medicamento" type="text" placeholder="Ex.: 2 vezes ao dia">
+    </div>
+
+    <div class="botoes-formulario">
+      <button class="botao-contorno" onclick="fecharFormularioMedicamento()">Cancelar</button>
+      <button class="botao-principal" onclick="salvarMedicamento()">Salvar medicamento</button>
+    </div>
+  </div>
+</div>
+
+<div class="aviso-tela" id="aviso-tela"></div>
+
+<div class="fundo-modal" id="modal-emergencia">
+  <div class="caixa-modal">
+    <h3>Chamar emergência?</h3>
+    <p>Isso é uma simulação. No app final, aqui aciona o contato de emergência ou liga para o SAMU/cuidador.</p>
+    <button class="botao-principal" onclick="fecharEmergencia()">Entendi</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
