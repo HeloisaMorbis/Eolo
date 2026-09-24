@@ -1,0 +1,19 @@
+CORREÇÃO ÉOLO — PÁGINA "CRIAR UMA CONTA"
+
+Nesta versão foi corrigido o problema em que o botão "Criar uma conta" não abria nada.
+
+O pacote agora contém:
+- Tela de criação de conta com email, senha, confirmação de senha e idade.
+- Botão para voltar ao login.
+- A ficha de saúde aparece somente durante o cadastro.
+- A "Minha ficha" foi removida do menu normal do sistema.
+- A ficha continua usando os mesmos campos e funções já existentes no script.
+- O caminho da imagem da bombinha foi ajustado para o arquivo incluído no pacote.
+
+O fluxo esperado é:
+1. Login > Criar uma conta.
+2. Preencher email, senha, confirmação e idade.
+3. Criar conta.
+4. Preencher a ficha de saúde em 6 partes.
+5. Finalizar cadastro.
+6. Voltar para o login e entrar com email e senha.
