@@ -1,0 +1,20 @@
+ÉOLO — LOGIN E CADASTRO CORRIGIDOS
+
+O login agora usa o Supabase Auth com email e senha.
+
+IMPORTANTE SOBRE CONFIRMAÇÃO DE EMAIL
+--------------------------------------
+O Supabase pode exigir que o usuário confirme o email antes do primeiro login.
+Se isso estiver ativado no seu projeto, depois de criar a conta a pessoa deve abrir o email recebido e clicar no link de confirmação. Só depois disso o login funcionará.
+
+Se você quiser que o usuário consiga entrar imediatamente, no painel do Supabase vá em:
+Authentication > Providers > Email
+
+e desative a opção de confirmação de email (o nome pode aparecer como "Confirm email").
+
+O código também foi corrigido para mostrar uma mensagem clara quando o email ainda não foi confirmado ou quando email/senha estão incorretos.
+
+FLUXO:
+Criar conta -> email + senha + confirmar senha + idade -> ficha de saúde -> finalizar -> login com email + senha -> site.
+
+A ficha preenchida durante o cadastro fica temporariamente associada ao email e é enviada ao banco quando o usuário consegue autenticar. Depois disso, cadastro_concluido fica como true.
